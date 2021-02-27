@@ -12,9 +12,9 @@ class CompanyController extends Controller
         $this->middleware('auth:company');
     }
     
-
     public function dashboard()
     {
-        return view('company.dashboard');
+        $company = auth()->guard('company')->user();
+        return view('company.dashboard', compact('company'));
     }
 }

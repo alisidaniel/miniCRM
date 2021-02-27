@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -12,11 +12,11 @@ class AdminController extends Controller
     {
         $this->middleware('auth:admin');
     }
-    
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $admin = auth()->guard('admin')->user();
+        return view('admin.dashboard', compact('admin'));
     }
 
 }
