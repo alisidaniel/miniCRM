@@ -11,6 +11,11 @@ class Company extends Authenticatable
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [ 
         'name', 
         'email', 
@@ -18,5 +23,10 @@ class Company extends Authenticatable
         'logo', 
         'url',
     ];
+
+    public function employee()
+    {
+        return $this->hasMany('App\Modles\User');
+    }
 
 }

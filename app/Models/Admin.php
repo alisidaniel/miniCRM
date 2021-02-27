@@ -10,9 +10,19 @@ class Admin extends Authenticatable
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [ 
         'name', 
         'email', 
         'password',
     ];
+
+    public function company()
+    {
+        return $this->hasMany('App\Models\Company');
+    }
 }
