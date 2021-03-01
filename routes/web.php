@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Company;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $companies = Company::orderBy('created_at','desc')->paginate(5);
+    return view('welcome', compact('companies'));
 });
 
 
