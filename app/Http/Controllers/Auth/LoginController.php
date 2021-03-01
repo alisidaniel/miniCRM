@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -53,9 +53,8 @@ class LoginController extends Controller
         // if successful, then redirect to their intended location
         return redirect()->intended(route('employee.dashboard'));
       } 
-      
       // if unsuccessful, then redirect back to the login with the form data
-      return redirect()->back()->withInput($request->only('email', 'remember'));
+      return redirect()->back()->with('failure', 'Login failed');;
     }
 
 

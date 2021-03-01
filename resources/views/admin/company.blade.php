@@ -1,4 +1,4 @@
-@extends('layouts.company-layout.app')
+@extends('layouts.admin-layout.app')
 
 @section('content')
 <div class="container">
@@ -14,7 +14,7 @@
                 </div>
             @endif 
             <div class="d-inline">
-                <h5 class="card-title">List Of Employees</h5>
+                <h5 class="card-title">List Of Companies</h5>
                 <div class="d-flex justify-content-end mb-3">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                         Add New
@@ -26,7 +26,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">employee name</th>
+                            <th scope="col">Company name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Date Created</th>
                             <th scope="col"></th>
@@ -35,15 +35,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if(count($employees))
-                        @foreach($employees as $key => $employee)
+                        @if(count($companies))
+                        @foreach($companies as $key => $company)
                         <tr>
                             <th scope="row">{{$key+1}}</th>
-                            <td>{{$employee->name}}</td>
-                            <td>{{$employee->email}}</td>
-                            <td>{{$employee->created_at->diffForHumans()}}</td>
-                            <td><a class="btn btn-warning" type="button" data-employee="{{$employee}} "data-toggle="modal" data-target="#edit">Edit</a></td></td>
-                            <td><a class="btn btn-danger" href="{{ route('company.delete.employee', $employee->id) }}">Delete</a></td>
+                            <td>{{$company->name}}</td>
+                            <td>{{$company->email}}</td>
+                            <td>{{$company->created_at->diffForHumans()}}</td>
+                            <td><a class="btn btn-warning" type="button" data-company="{{$company}} "data-toggle="modal" data-target="#edit">Edit</a></td></td>
+                            <td><a class="btn btn-danger" href="{{ route('admin.delete.company', $company->id) }}">Delete</a></td>
+                            <td><a class="btn btn-primary" href="{{ route('admin.show.empoyee', $company->id) }}"> View Employee</a></td>
                         </tr>              
                         @endforeach
                         @else
@@ -54,7 +55,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $employees->links() }}
+            {{ $companies->links() }}
         </div>
     </div>
 </div>
@@ -65,15 +66,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit employee</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit company</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="form" action="{{ route('company.update.employee') }}" method="post" enctype="multipart/form-data">
+            <form class="form" action="#" method="post" enctype="multipart/form-data">
                 @csrf
                 {{ method_field('PUT') }}
                 <div class="modal-body">
                     <!--- form --->
-                    <employee-edit-form></employee-edit-form>
+                    <company-edit-form></company-edit-form>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Update</button>
@@ -88,13 +89,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add new employee</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add new company</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="form" method="POST" action="{{ route('admin.create.employee') }}" enctype="multipart/form-data"> 
+            <form class="form" method="POST" action="{{ route('admin.create.company') }}" enctype="multipart/form-data"> 
                 @csrf
                 <div class="modal-body">
-                     <employee-form></employee-form>
+                     <company-form></company-form>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Add</button>
@@ -105,8 +106,8 @@
     </div>
 
 @endsection
-
 <script type="text/javascript">
+
 $('#edit').on('show', function(e) {
     
 });

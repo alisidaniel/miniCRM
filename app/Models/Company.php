@@ -26,7 +26,7 @@ class Company extends Authenticatable
 
     public function employee()
     {
-        return $this->hasMany('App\Modles\User');
+        return $this->hasMany('App\Modles\User', 'company_id', 'id');
     }
 
 }

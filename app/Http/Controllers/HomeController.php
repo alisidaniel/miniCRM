@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-        return view('home');
+        $company = optional(User::find(Auth::id())->company);
+        $user = User::find(Auth::id());
+        return view('home', compact('company', 'user'));
     }
 }

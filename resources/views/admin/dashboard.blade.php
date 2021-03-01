@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -14,7 +14,22 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div class="mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="..." alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name: {{$admin->name}}</h5>
+                                    <h6 class="card-text">Email: {{$admin->email}}</h6>
+                                    <a class="card-text" href="{{ route('admin.show.companies') }}" class="btn btn-primary">
+                                        <button class="btn btn-info">List of companies</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

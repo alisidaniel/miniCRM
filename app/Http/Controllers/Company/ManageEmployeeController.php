@@ -37,8 +37,8 @@ class ManageEmployeeController extends Controller
 
     public function view()
     {
-        $users = User::orderBy('created_at', 'desc')->get();        
-        return view('company.employee', compact('users'));
+        $employees = User::where('company_id', Auth::user()->id)->paginate(5);      
+        return view('company.employee', compact('employees'));
     }
 
     public function update(Request $request)

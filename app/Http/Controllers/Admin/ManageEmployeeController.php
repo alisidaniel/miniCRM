@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use App\Models\Company;
 
 class ManageEmployeeController extends Controller
 {
@@ -19,25 +20,28 @@ class ManageEmployeeController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
         ];
-
+ 
         $this->validate($request, $rule);
 
         $employee = new User();
-        $employee = $employee->create([
-            'name' => $request['name'],
-            'email' => $request['email'],
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        ]);
+        ];
+
+        $employee = User::create($data);
         
         if($employee) return redirect()->back()->with('success', 'Employee added successfully.'); 
         
         return redirect()->back()->with('failure', 'An error occurred. Please try again');
     }
 
-    public function view(Request $request)
+    public function view($id)
     {   
-        $employees = User::orderBy('created_at', 'desc')->paginate(5);
-        return view('admin.employee', compact('employees'));
+        $employees = User::where('company_id', $id)->paginate(5);
+        $companies = Company::all();
+        return view('admin.employee', compact('employees', 'companies'));
     }
 
     public function update(Request $request)

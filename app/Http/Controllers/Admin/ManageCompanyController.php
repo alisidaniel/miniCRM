@@ -18,29 +18,34 @@ class ManageCompanyController extends Controller
         $rule = [
             'name'  => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'logo'  => 'required',
-            'url'   => 'required'
+            'logo'  => 'image|mimes:jpeg,jpg,png',
+            'url'   => 'required|string'
         ];
 
         $this->validate($request, $rule);
 
-        $company = new Company();
-        $company = $company->create([
-            'name' => $request['name'],
-            'email' => $request['email'],
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'logo' => $request['logo']
-        ]);
+            'url' => $request->url,
+        ];
+
+        if ($request->hasFile('logo') && $request->file('logo')->isValid()){
+            $data['logo'] = $request->logo->store('public/logo');
+        }
+
+        $company = Company::create($data);
         
         if($company) return redirect()->back()->with('success', 'Company added successfully.'); 
-        
+
         return redirect()->back()->with('failure', 'An error occurred. Please try again');
 
     }
 
     public function view()
     {   
-        $companies = Company::orderBy('created_at', 'desc')->paginate(5);
+        $companies = Company::orderBy('id', 'DESC')->paginate(5);
         return view('admin.company', compact('companies'));
     }
 
@@ -60,9 +65,8 @@ class ManageCompanyController extends Controller
 
     public function delete(Request $request)
     {
-        $employee = Company::where('id', $request->id)->delete();
-        if($employee) return redirect()->back()->with('success', 'Company data deleted successfully.');
-
+        $company = Company::where('id', $request->id)->delete();
+        if($company) return redirect()->back()->with('success', 'Company data deleted successfully.');
         return redirect()->back()->with('failure', 'An error occurred. Please try again');
     }
     
