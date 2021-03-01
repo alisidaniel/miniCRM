@@ -21,13 +21,8 @@
             />
         </div>
         <div class="mb-3">
-            <label for="logo" class="form-label">Assign company</label>
-            <select
-                class="form-select form-control"
-                name="company"
-                id="company"
-            >
-                <option label="Choose"></option>
+            <label for="company" class="form-label">Assign company</label>
+            <select class="form-control" name="company" id="company">
                 <option v-for="company in companies" :value="company.id">{{
                     company.name
                 }}</option>

@@ -1995,11 +1995,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["companies"],
   data: function data() {// return
@@ -37983,26 +37978,22 @@ var render = function() {
     _vm._m(1),
     _vm._v(" "),
     _c("div", { staticClass: "mb-3" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "logo" } }, [
+      _c("label", { staticClass: "form-label", attrs: { for: "company" } }, [
         _vm._v("Assign company")
       ]),
       _vm._v(" "),
       _c(
         "select",
         {
-          staticClass: "form-select form-control",
+          staticClass: "form-control",
           attrs: { name: "company", id: "company" }
         },
-        [
-          _c("option", { attrs: { label: "Choose" } }),
-          _vm._v(" "),
-          _vm._l(_vm.companies, function(company) {
-            return _c("option", { domProps: { value: company.id } }, [
-              _vm._v(_vm._s(company.name))
-            ])
-          })
-        ],
-        2
+        _vm._l(_vm.companies, function(company) {
+          return _c("option", { domProps: { value: company.id } }, [
+            _vm._v(_vm._s(company.name))
+          ])
+        }),
+        0
       )
     ])
   ])
