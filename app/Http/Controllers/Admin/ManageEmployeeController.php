@@ -23,15 +23,16 @@ class ManageEmployeeController extends Controller
  
         $this->validate($request, $rule);
         $employee = new User();
+    
         $data = [
-            'company_id' => 5,
+            'company_id' => $request->company,
             'name' => $request->name,
             'email' => $request->email,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ];
-        // dd($data);
-        $employee = User::create($data);
         
+        $employee = User::create($data);
+
         if($employee) return redirect()->back()->with('success', 'Employee added successfully.'); 
         
         return redirect()->back()->with('failure', 'An error occurred. Please try again');

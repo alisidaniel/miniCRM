@@ -37,7 +37,7 @@ class ManageEmployeeController extends Controller
 
     public function view()
     {
-        $employees = User::where('company_id', Auth::user()->id)->paginate(5);      
+        $employees = User::where('company_id', Auth::user()->id)->paginate(5);   
         return view('company.employee', compact('employees'));
     }
 
@@ -48,6 +48,7 @@ class ManageEmployeeController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ]);
+        
         if($employee) return redirect()->back()->with('success', 'Employee data updated successfully.');
 
         return redirect()->back()->with('failure', 'An error occurred. Please try again');

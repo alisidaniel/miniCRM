@@ -14,7 +14,7 @@ Route::group(['middleware' => 'auth:admin'], function() {
     Route::get('/delete/company/{id}', 'ManageCompanyController@delete')->name('admin.delete.company');
 
     Route::post('/add/employee', 'ManageEmployeeController@store')->name('admin.create.employee');
-    Route::put('/update/employee/{id}', 'ManageEmployeeController@update')->name('admin.update.employee');
+    Route::put('/update/employee', 'ManageEmployeeController@update')->name('admin.update.employee');
     Route::get('/delete/employee/{id}', 'ManageEmployeeController@delete')->name('admin.delete.employee');
 
 });

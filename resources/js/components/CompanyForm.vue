@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div class="">
+            <input type="hidden" id="id" name="id" />
+        </div>
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input

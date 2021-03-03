@@ -37,12 +37,21 @@
                     <tbody>
                         @if(count($companies))
                         @foreach($companies as $key => $company)
-                        <tr>
+                        <tr class="foo">
                             <th scope="row">{{$key+1}}</th>
-                            <td>{{$company->name}}</td>
-                            <td>{{$company->email}}</td>
+                            <td class="name">{{$company->name}}</td>
+                            <td class="email">{{$company->email}}</td>
                             <td>{{$company->created_at->diffForHumans()}}</td>
-                            <td><a class="btn btn-warning" type="button" data-company="{{$company}} "data-toggle="modal" data-target="#edit">Edit</a></td></td>
+                            <td>
+                                <a class="modalLink btn btn-warning" type="button" 
+                                    data-id="{{$company->id}}"
+                                    data-name="{{$company->name}}"
+                                    data-email="{{$company->email}}"
+                                    data-url="{{$company->url}}"
+                                    data-toggle="modal" data-target="#edit">
+                                    Edit
+                                </a>
+                            </td>
                             <td><a class="btn btn-danger" href="{{ route('admin.delete.company', $company->id) }}">Delete</a></td>
                             <td><a class="btn btn-primary" href="{{ route('admin.show.empoyee', $company->id) }}"> View Employee</a></td>
                         </tr>              
@@ -69,12 +78,12 @@
                 <h5 class="modal-title" id="exampleModalLabel">Edit company</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="form" action="#" method="post" enctype="multipart/form-data">
+            <form class="form" action="{{ route('admin.update.company') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 {{ method_field('PUT') }}
                 <div class="modal-body">
                     <!--- form --->
-                    <company-edit-form></company-edit-form>
+                    <company-form></company-form>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Update</button>
@@ -106,9 +115,17 @@
     </div>
 
 @endsection
-<script type="text/javascript">
 
-$('#edit').on('show', function(e) {
-    
+@section('page-js')
+<script type="text/javascript">
+$(document).ready(function() { 
+    $('.modalLink').on('click', function() {
+        // append data to form
+        $('#id').val($(this).data('id'));
+        $('#name').val($(this).data('name'));
+        $('#email').val($(this).data('email'));
+        $('#url').val($(this).data('url'));
+    });
 });
 </script>
+@endsection

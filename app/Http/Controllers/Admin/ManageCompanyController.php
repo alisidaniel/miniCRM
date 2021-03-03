@@ -51,13 +51,19 @@ class ManageCompanyController extends Controller
 
     public function update(Request $request)
     {
-        $employee = Company::where('id', $request->id)
-        ->update([
+
+        if ($request->hasFile('logo') && $request->file('logo')->isValid()){
+            $data['logo'] = $request->logo->store('public/logo');
+        }
+
+        $data = [
             'name'  => $request->name,
             'email' => $request->email,
-            'logo'  => $request->logo,
             'url'   => $request->url,
-        ]);
+        ];
+
+        $employee = Company::where('id', $request->id)->update($data);
+
         if($employee) return redirect()->back()->with('success', 'Company data updated successfully.');
 
         return redirect()->back()->with('failure', 'An error occurred. Please try again');

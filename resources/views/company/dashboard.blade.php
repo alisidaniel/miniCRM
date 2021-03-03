@@ -42,7 +42,16 @@
                             <td>{{$employee->name}}</td>
                             <td>{{$employee->email}}</td>
                             <td>{{$employee->created_at->diffForHumans()}}</td>
-                            <td><a class="btn btn-warning" type="button" data-employee="{{$employee}} "data-toggle="modal" data-target="#edit">Edit</a></td></td>
+                            <td>
+                                <a class="modalLink btn btn-warning" type="button" 
+                                    data-id="{{$employee->id}}"
+                                    data-name="{{$employee->name}}"
+                                    data-email="{{$employee->email}}"
+                                    data-toggle="modal" 
+                                    data-target="#edit">
+                                    Edit
+                                </a>
+                            </td>
                             <td><a class="btn btn-danger" href="{{ route('company.delete.employee', $employee->id) }}">Delete</a></td>
                         </tr>              
                         @endforeach
@@ -68,12 +77,11 @@
                 <h5 class="modal-title" id="exampleModalLabel">Edit employee</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="form" action="{{ route('company.update.employee') }}" method="post" enctype="multipart/form-data">
+            <form class="form" action="{{ route('company.update.employee') }}" method="post">
                 @csrf
                 {{ method_field('PUT') }}
                 <div class="modal-body">
-                    <!--- form --->
-                    <employee-edit-form></employee-edit-form>
+                    <company-employee-form></company-employee-form>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Update</button>
@@ -91,23 +99,30 @@
                 <h5 class="modal-title" id="exampleModalLabel">Add new employee</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="form" method="POST" action="{{ route('admin.create.employee') }}" enctype="multipart/form-data"> 
+            <form class="form" method="POST" action="{{ route('company.create.employee') }}" enctype="multipart/form-data"> 
                 @csrf
                 <div class="modal-body">
-                     <employee-form></employee-form>
+                    <company-employee-form></company-employee-form>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Add</button>
                 </div>
             </form>
-            </div>
         </div>
     </div>
+</div>
 
 @endsection
 
+@section('page-js')
 <script type="text/javascript">
-$('#edit').on('show', function(e) {
-    
+$(document).ready(function() { 
+    $('.modalLink').on('click', function() {
+        // append data to form
+        $('.id').val($(this).data('id'));
+        $('.name').val($(this).data('name'));
+        $('.email').val($(this).data('email'));
+    });
 });
 </script>
+@endsection

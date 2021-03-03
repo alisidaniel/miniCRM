@@ -23,28 +23,8 @@
                 placeholder="name@example.com"
             />
         </div>
-        <div class="mb-3">
-            <label for="company" class="form-label">Assign company</label>
-            <select
-                class="form-control"
-                v-model="company"
-                name="company"
-                id="company"
-            >
-                <option v-for="company in companies" :value="company.id">{{
-                    company.name
-                }}</option>
-            </select>
-        </div>
     </div>
 </template>
 <script>
-export default {
-    props: ["companies"],
-    data() {
-        return {
-            company: ""
-        };
-    }
-};
+export default {};
 </script>

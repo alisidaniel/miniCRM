@@ -1834,10 +1834,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEditForm.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEditForm.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEmployeeForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEmployeeForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1845,23 +1845,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1904,6 +1887,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
 //
 //
 //
@@ -1995,9 +1981,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["companies"],
-  data: function data() {// return
+  data: function data() {
+    return {
+      company: ""
+    };
   }
 });
 
@@ -2064,8 +2061,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 Vue.component("example-component", __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 Vue.component("company-form", __webpack_require__(/*! ./components/CompanyForm.vue */ "./resources/js/components/CompanyForm.vue").default);
-Vue.component("company-edit-form", __webpack_require__(/*! ./components/CompanyEditForm.vue */ "./resources/js/components/CompanyEditForm.vue").default);
 Vue.component("employee-form", __webpack_require__(/*! ./components/EmployeeForm.vue */ "./resources/js/components/EmployeeForm.vue").default);
+Vue.component("company-employee-form", __webpack_require__(/*! ./components/CompanyEmployeeForm.vue */ "./resources/js/components/CompanyEmployeeForm.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -37496,10 +37493,10 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./resources/js/components/CompanyEditForm.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/CompanyEditForm.vue ***!
-  \*****************************************************/
+/***/ "./resources/js/components/CompanyEmployeeForm.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/CompanyEmployeeForm.vue ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37507,8 +37504,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _CompanyEditForm_vue_vue_type_template_id_0e8afc70___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CompanyEditForm.vue?vue&type=template&id=0e8afc70& */ "./resources/js/components/CompanyEditForm.vue?vue&type=template&id=0e8afc70&");
-/* harmony import */ var _CompanyEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CompanyEditForm.vue?vue&type=script&lang=js& */ "./resources/js/components/CompanyEditForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CompanyEmployeeForm_vue_vue_type_template_id_6d77e7d8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8& */ "./resources/js/components/CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8&");
+/* harmony import */ var _CompanyEmployeeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CompanyEmployeeForm.vue?vue&type=script&lang=js& */ "./resources/js/components/CompanyEmployeeForm.vue?vue&type=script&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -37518,9 +37515,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
-  _CompanyEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
-  _CompanyEditForm_vue_vue_type_template_id_0e8afc70___WEBPACK_IMPORTED_MODULE_0__.render,
-  _CompanyEditForm_vue_vue_type_template_id_0e8afc70___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _CompanyEmployeeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _CompanyEmployeeForm_vue_vue_type_template_id_6d77e7d8___WEBPACK_IMPORTED_MODULE_0__.render,
+  _CompanyEmployeeForm_vue_vue_type_template_id_6d77e7d8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -37530,7 +37527,7 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/CompanyEditForm.vue"
+component.options.__file = "resources/js/components/CompanyEmployeeForm.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -37652,10 +37649,10 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/CompanyEditForm.vue?vue&type=script&lang=js&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/CompanyEditForm.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/CompanyEmployeeForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/CompanyEmployeeForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37663,8 +37660,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CompanyEditForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEditForm.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEmployeeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CompanyEmployeeForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEmployeeForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEmployeeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -37716,19 +37713,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/CompanyEditForm.vue?vue&type=template&id=0e8afc70&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/CompanyEditForm.vue?vue&type=template&id=0e8afc70& ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8& ***!
+  \****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEditForm_vue_vue_type_template_id_0e8afc70___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEditForm_vue_vue_type_template_id_0e8afc70___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEmployeeForm_vue_vue_type_template_id_6d77e7d8___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEmployeeForm_vue_vue_type_template_id_6d77e7d8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEditForm_vue_vue_type_template_id_0e8afc70___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CompanyEditForm.vue?vue&type=template&id=0e8afc70& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEditForm.vue?vue&type=template&id=0e8afc70&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompanyEmployeeForm_vue_vue_type_template_id_6d77e7d8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8&");
 
 
 /***/ }),
@@ -37784,10 +37781,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEditForm.vue?vue&type=template&id=0e8afc70&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEditForm.vue?vue&type=template&id=0e8afc70& ***!
-  \***************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CompanyEmployeeForm.vue?vue&type=template&id=6d77e7d8& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37808,13 +37805,20 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
+      _c("div", {}, [
+        _c("input", {
+          staticClass: "id",
+          attrs: { type: "hidden", id: "id", name: "id" }
+        })
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "mb-3" }, [
         _c("label", { staticClass: "form-label", attrs: { for: "name" } }, [
           _vm._v("Name")
         ]),
         _vm._v(" "),
         _c("input", {
-          staticClass: "form-control",
+          staticClass: "name form-control",
           attrs: {
             type: "text",
             name: "name",
@@ -37830,35 +37834,13 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("input", {
-          staticClass: "form-control",
+          staticClass: "email form-control",
           attrs: {
             type: "email",
             name: "email",
             id: "email",
             placeholder: "name@example.com"
           }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mb-3" }, [
-        _c("label", { staticClass: "form-label", attrs: { for: "logo" } }, [
-          _vm._v("Company Logo")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "file", name: "logo", id: "logo", accept: "image/*" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mb-3" }, [
-        _c("label", { staticClass: "form-label", attrs: { for: "url" } }, [
-          _vm._v("Company Url")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", name: "url", id: "url", placeholder: "Url" }
         })
       ])
     ])
@@ -37894,6 +37876,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
+      _c("div", {}, [
+        _c("input", { attrs: { type: "hidden", id: "id", name: "id" } })
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "mb-3" }, [
         _c("label", { staticClass: "form-label", attrs: { for: "name" } }, [
           _vm._v("Name")
@@ -37977,6 +37963,8 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
     _c("div", { staticClass: "mb-3" }, [
       _c("label", { staticClass: "form-label", attrs: { for: "company" } }, [
         _vm._v("Assign company")
@@ -37985,8 +37973,31 @@ var render = function() {
       _c(
         "select",
         {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.company,
+              expression: "company"
+            }
+          ],
           staticClass: "form-control",
-          attrs: { name: "company", id: "company" }
+          attrs: { name: "company", id: "company" },
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.company = $event.target.multiple
+                ? $$selectedVal
+                : $$selectedVal[0]
+            }
+          }
         },
         _vm._l(_vm.companies, function(company) {
           return _c("option", { domProps: { value: company.id } }, [
@@ -38003,13 +38014,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("input", {
+        staticClass: "id",
+        attrs: { type: "hidden", id: "id", name: "id" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mb-3" }, [
       _c("label", { staticClass: "form-label", attrs: { for: "name" } }, [
         _vm._v("Name")
       ]),
       _vm._v(" "),
       _c("input", {
-        staticClass: "form-control",
+        staticClass: "name form-control",
         attrs: { type: "text", name: "name", id: "name", placeholder: "James" }
       })
     ])
@@ -38024,7 +38046,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("input", {
-        staticClass: "form-control",
+        staticClass: "email form-control",
         attrs: {
           type: "email",
           name: "email",

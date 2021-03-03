@@ -25,12 +25,12 @@ Vue.component(
 );
 Vue.component("company-form", require("./components/CompanyForm.vue").default);
 Vue.component(
-    "company-edit-form",
-    require("./components/CompanyEditForm.vue").default
-);
-Vue.component(
     "employee-form",
     require("./components/EmployeeForm.vue").default
+);
+Vue.component(
+    "company-employee-form",
+    require("./components/CompanyEmployeeForm.vue").default
 );
 
 /**
