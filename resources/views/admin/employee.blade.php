@@ -53,7 +53,9 @@
                     </tbody>
                 </table>
             </div>
-            {{ $employees->links() }}
+            <div class="d-flex justify-content-end mt-3">
+                {{ $employees->links() }}
+            </div>
         </div>
     </div>
 </div>

@@ -64,7 +64,9 @@
                     </tbody>
                 </table>
             </div>
-            {{ $companies->links() }}
+            <div class="d-flex justify-content-end mt-3">
+                {{ $companies->links() }}
+            </div>
         </div>
     </div>
 </div>

@@ -17,7 +17,7 @@
                     <div class="mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="..." alt="...">
+                                <img src="{{ asset('checked-user-male.png') }}" class="img img-responsive mb-2"  width="72" height="72" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">

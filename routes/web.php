@@ -23,4 +23,5 @@ Route::get('/', function () {
 
 
 Auth::routes();
+Route::put('/profile/update', 'HomeController@update')->name('employee.update.profile');
 Route::get('/home', 'HomeController@dashboard')->name('employee.dashboard');
