@@ -15,28 +15,20 @@ class AuthenticationTest extends TestCase
      *
      * @return void
      */
-    protected $password = 'password';
-    // public function test_user_can_view_a_login_form()
-    // {
-    //     $reponse = $this->get('/login');
 
-    //     $reponse->assertSuccessful();
-    //     $reponse->assertViewIs('')
-    // }
+    public function test_user_cannot_view_login_if_authenticated()
+    {
+        $user = \App\Models\User::factory()->make();
 
-    // public function test_user_cannot_view_login_if_authenticated()
-    // {
-    //     $user = \App\Models\User::factory(User::class)->make();
+        $reponse = $this->actingAs($user)->get('/login');
 
-    //     $reponse = $this->actingAs($user)->get('/login');
-
-    //     $reponse->assertRedirect('/home');
-    // }
+        $reponse->assertRedirect('/home');
+    }
 
     public function test_user_login_with_valid_auth()
     {
         $password = 'password';
-        $user = User::factory()->create();
+        $user = \App\Models\User::factory()->create();
 
         $reponse = $this->post('/login', [
             'email' => $user->email,
