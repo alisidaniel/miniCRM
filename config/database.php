@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Str;
 
-
 $DATABASE_URL = parse_url('postgres://rtseyxhtdzjiil:c99c6c9fee0ddcc77bfd93aefceb85623662eeeb83bdae546873440c6c818883@ec2-54-196-111-158.compute-1.amazonaws.com:5432/dbheovbslfscvq');
 
 return [
@@ -85,7 +84,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
+            'database' => env('DB_DATABASE', 'crmapp'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
@@ -128,6 +127,7 @@ return [
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
         ],
 
+
         'default' => [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
@@ -135,6 +135,7 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_DB', '0'),
         ],
+
 
         'cache' => [
             'url' => env('REDIS_URL'),
