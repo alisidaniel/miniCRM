@@ -4,16 +4,21 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## ADMIN LOGIN URL
 
-    - localhost:8000/admin/login
+    - https://minicrm-test.herokuapp.com/admin/login
 
 ## Company LOGIN URL
 
-    - localhost:8000/company/login
+    - https://minicrm-test.herokuapp.com/company/login
 
 ## Employee LOGIN URL
 
-    - localhost:8000/login
+    - https://minicrm-test.herokuapp.com/login
 
-NB: LOGIN - email: test@test.com - password: password
+## Index page with list of all companies
 
-## Kindly Find Datebase sql file name "crmdb.sql" in project root directory
+    - https://minicrm-test.herokuapp.com
+
+NB: Default Login for above routes (admin, company or employee)
+
+    - Email: test@test.com
+    - password: password
