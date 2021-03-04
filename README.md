@@ -14,8 +14,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
     - https://minicrm-test.herokuapp.com/login
 
-NB: LOGIN - email: test@test.com - password: password
-
 ## Index page with list of all companies
 
     - https://minicrm-test.herokuapp.com
+
+NB: Default Login for above routes (admin, company or employee)
+
+    - Email: test@test.com
+    - password: password
